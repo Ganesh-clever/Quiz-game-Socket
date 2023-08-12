@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.login-container {
+  width: 350px;
+  display: grid;
+  margin-left: 36%;
+  margin-top: 2%;
+  padding: 15px 25px;
+  border: 1px solid #F5F5F5;
+}
+
+button.ant-btn.css-dev-only-do-not-override-txh9fw.ant-btn-primary {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin: 15px 0;
+  font-weight: 600;
+}

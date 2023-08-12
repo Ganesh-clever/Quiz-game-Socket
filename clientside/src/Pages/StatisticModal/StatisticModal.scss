@@ -1,0 +1,28 @@
+.statistic-modal {
+    width: 85vw !important;
+}
+
+.piechart-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.statistic-col {
+    display: flex;
+    justify-content: center;
+}
+
+.statistic-card {
+    width: 230px;
+    margin: 10px 10px;
+}
+
+.piechart-containe {
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 365px;
+
+    .ant-card-body {
+        padding: 0 !important;
+    }
+}

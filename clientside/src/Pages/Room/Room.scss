@@ -1,0 +1,19 @@
+.room-container{
+    width: 100vw;
+}
+
+button.ant-btn.ant-btn-primary.Room-btn {
+    float: right;
+}
+
+.delete-modal-warpper {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin: 20px 10px;
+}
+
+span.anticon.anticon-exclamation-circle {
+    font-size: 36px;
+    color: navy;
+}
