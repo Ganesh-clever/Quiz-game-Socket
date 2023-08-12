@@ -19,10 +19,12 @@ export default function Login() {
                     duration: 1000
                 });
                 setTimeout(() => {
+                    window.location.reload();
+                }, 500)
+                setTimeout(() => {
                     navigate('/');
                 }, 1000)
             }
-
         }).catch(() => {
             api.error({
                 message: 'Invaild credentials enterd',
