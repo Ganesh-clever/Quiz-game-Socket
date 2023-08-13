@@ -28,8 +28,11 @@ console.log('DB connected with some issues..');
 // Api
 const userRouter = require('./Routers/userRouter');
 const RoomRouter = require('./Routers/RoomRouter');
+const MessageRouter = require('./Routers/MessageRouter');
+
 app.use('/api',userRouter);
 app.use('/api',RoomRouter);
+app.use('/api',MessageRouter);
 
 const Server = app.listen(process.env.PORT,(()=>{
   console.log(`Server connected with port : ${process.env.PORT}`);

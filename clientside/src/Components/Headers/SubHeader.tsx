@@ -46,6 +46,11 @@ export default function SubHeader() {
                         <Button type='primary' onClick={() => dispatch(ModalHandler(''))} className='sub-header-btn'>Generate Question</Button>
                     </div>
                 }
+                {location.pathname === '/chat' &&
+                    <div className="subheader-btn">
+                        <Button type='primary' onClick={() => dispatch(ModalHandler(''))} className='sub-header-btn'>Groups</Button>
+                    </div>
+                }
             </Col>
         </Row>
     )

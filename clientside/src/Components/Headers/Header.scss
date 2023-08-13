@@ -33,6 +33,33 @@
     box-shadow: none !important;
 }
 
+.chat-header-container {
+    width: -webkit-fill-available;
+    height: 60px;
+    position: fixed;
+    display: flex;
+    padding: 0 20px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.07);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-avatar {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-user-name {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0 12px;
+}
+
+img.avatar-img-header {
+    height: 45px;
+    border-radius: 25px;
+}
+
 .sub-header-btn {
     height: 45px;
     font-size: 15px;

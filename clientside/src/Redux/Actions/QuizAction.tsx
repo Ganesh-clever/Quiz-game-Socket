@@ -57,3 +57,24 @@ export const DeleteByIdRoom = createAsyncThunk(
        return await User.DeleteByIdRoom(req);
     }
 )
+
+export const GetAllUsers = createAsyncThunk(
+    'quizApi/GetAllUsers',
+    async()=>{
+       return await User.GetAllUsers();
+    }
+)
+
+export const GetUserById = createAsyncThunk(
+    'quizApi/GetUserById',
+    async(req:any)=>{
+       return await User.GetUserById(req);
+    }
+)
+
+export const GetMessageById = createAsyncThunk(
+    'quizApi/GetMessageById',
+    async(req:any)=>{
+       return await User.GetMessageById(req);
+    }
+)

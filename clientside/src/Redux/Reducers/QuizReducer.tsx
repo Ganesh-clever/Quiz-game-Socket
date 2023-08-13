@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { CreateRoom, DeleteByIdRoom, GetAllQuizRoom, GetAllRoom, GetByIdRoom, LoginUser, RegisterUser, UpdateRoom } from "../Actions/QuizAction";
+import { CreateRoom, DeleteByIdRoom, GetAllQuizRoom, GetAllRoom, GetAllUsers, GetByIdRoom, GetMessageById, GetUserById, LoginUser, RegisterUser, UpdateRoom } from "../Actions/QuizAction";
 
 const initialState = {
     userData: [],
@@ -7,7 +7,10 @@ const initialState = {
     allRoom:[],
     Room:[],
     loading: false,
-    QuizRoom: []
+    QuizRoom: [],
+    users: [],
+    userDetails:{},
+    messages : []
 }
 
 export const QuizSlice = createSlice({
@@ -20,6 +23,7 @@ export const QuizSlice = createSlice({
         })
         builder.addCase(LoginUser.fulfilled, (state, action) => {
             localStorage.setItem('token',action.payload.data.token);
+            localStorage.setItem('userDetails',JSON.stringify(action.payload.data.user));
             state.userData = action.payload.data;
             state.token = action.payload.data.token;
         })
@@ -39,6 +43,15 @@ export const QuizSlice = createSlice({
         })
         builder.addCase(DeleteByIdRoom.fulfilled, (state, action) => {
  
+        })
+        builder.addCase(GetAllUsers.fulfilled, (state, action) => {
+          state.users = action.payload.data;
+        })
+        builder.addCase(GetUserById.fulfilled, (state, action) => {
+            state.userDetails = action.payload.data;
+        })
+        builder.addCase(GetMessageById.fulfilled, (state, action) => {
+            state.messages = action.payload.data;
         })
         .addMatcher(
             (action) => action.type.endsWith("/pending"),

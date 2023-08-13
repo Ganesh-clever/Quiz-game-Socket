@@ -10,6 +10,7 @@ import ProfilePage from "./Pages/Profile/ProfilePage";
 import RoomPage from "./Pages/Room/RoomPage";
 import QuizGamePage from "./Pages/QuizQuestion/QuizGamePage";
 import QuestionContainer from "./Pages/QuizQuestion/QuestionContainer";
+import Message from "./Pages/Message/Message";
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
             {
                 path:'settings',
                 element:<Settings/>
+            },
+            {
+                path:'chat',
+                element:<Message/>
             },
         ]
     },

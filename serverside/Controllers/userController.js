@@ -4,7 +4,7 @@ const _g = require('../Utils/GlobalFunctions');
 exports.userRegister = async (req, res) => {
     try {
         const { username, email, password } = req.body;
-        User.findOne({ $or:[{email},{username}] }).then(async (existUser) => {
+        User.findOne({ $or: [{ email }, { username }] }).then(async (existUser) => {
             const hashPassword = await _g.passwordEncrypt(password);
             if (!existUser) {
                 User.create({ username: username, email: email, password: hashPassword }).then((user) => {
@@ -26,7 +26,7 @@ exports.loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
         const username = email;
-        User.findOne({ $or:[{email},{username}] }).then(async (existUser) => {
+        User.findOne({ $or: [{ email }, { username }] }).then(async (existUser) => {
             if (existUser) {
                 const vaildPassword = await _g.passwordDecrypt(existUser.password, password);
                 if (vaildPassword) {
@@ -42,4 +42,22 @@ exports.loginUser = async (req, res) => {
     } catch (err) {
         res.status(500).json({ Message: "Internal server issues." })
     }
+}
+
+exports.GetAllUsers = async (req, res) => {
+    try {
+        const users = await User.find({$nor:[{_id:req.user._id}]});
+        res.status(200).json(users);
+    } catch (err) {
+        res.status(500).json({ Message: "Internal server error." });
+    }
+}
+
+exports.GetUserById = (req, res) => {
+    const { userId } = req.params;
+    User.findById({ _id: userId }).then((user) => {
+        res.status(200).json(user);
+    }).catch((err) => {
+        res.status(500).json({ Message: "Internal server issues." })
+    })
 }

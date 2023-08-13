@@ -3,6 +3,7 @@ import Room from '../Assets/Room.gif';
 import Profile from '../Assets/Profile.gif';
 import Setting from '../Assets/Settings.gif';
 import Quiz from '../Assets/Quiz.gif';
+import ChatImg from '../Assets/chat-img.gif'
 
 export const MenuItems: any = [
     {
@@ -14,6 +15,11 @@ export const MenuItems: any = [
         title: 'Socket Io Quiz Game',
         image: Quiz,
         path: '/quiz-slots'
+    },
+    {
+        title: 'Message',
+        image: ChatImg,
+        path: '/chat'
     },
     {
         title: 'Profile Settings',

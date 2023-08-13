@@ -1,4 +1,6 @@
 const SocketRoom = require("../Models/SocketRoom");
+const User = require('../Models/userSchema');
+const Message = require('../Models/MessageSchema');
 const io = require("../server");
 const { questions } = require("./Constants");
 const { shuffleArray, calculateScores } = require("./GlobalFunctions");
@@ -62,5 +64,18 @@ io.on('connection', (socket) => {
                 await SocketRoom.deleteOne({ roomId }); 
               }
             }
+      });
+
+      socket.on('send-message',async(fromUserId,toUserId,message)=>{
+         await User.find({$and:[{_id:fromUserId},{_id:toUserId}]}).then((user)=>{
+          if(user){
+            Message.create({senderId:fromUserId,receiverId:toUserId,message:message});
+            socket.broadcast.emit('chat-response',{senderId:fromUserId,receiverId:toUserId,message:message});
+            socket.emit('my-message',{senderId:fromUserId,receiverId:toUserId,message:message});
+          }else{
+            let status = 200;
+            socket.emit('message-status','User not found',status);
+          }
+         })
       });
 });

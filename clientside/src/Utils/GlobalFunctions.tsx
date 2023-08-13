@@ -21,3 +21,6 @@ export const PublicRouter : React.FC<IRouterParams> = ({children}) => {
     return <>{children}</>
 }
 
+export const JsonParser = (payload:any) => {
+   return JSON.parse(payload);
+}
