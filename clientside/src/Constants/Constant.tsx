@@ -3,7 +3,8 @@ import Room from '../Assets/Room.gif';
 import Profile from '../Assets/Profile.gif';
 import Setting from '../Assets/Settings.gif';
 import Quiz from '../Assets/Quiz.gif';
-import ChatImg from '../Assets/chat-img.gif'
+import ChatImg from '../Assets/chat-img.gif';
+import VideoConference from '../Assets/videochat.gif';
 
 export const MenuItems: any = [
     {
@@ -20,6 +21,11 @@ export const MenuItems: any = [
         title: 'Message',
         image: ChatImg,
         path: '/chat'
+    },
+    {
+        title: 'Video Conference',
+        image: VideoConference,
+        path: '/video-conference'
     },
     {
         title: 'Profile Settings',

@@ -11,6 +11,7 @@ import RoomPage from "./Pages/Room/RoomPage";
 import QuizGamePage from "./Pages/QuizQuestion/QuizGamePage";
 import QuestionContainer from "./Pages/QuizQuestion/QuestionContainer";
 import Message from "./Pages/Message/Message";
+import VideoChat from "./Pages/VideoChat/VideoChat";
 
 export const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
             {
                 path:'chat',
                 element:<Message/>
+            },
+            {
+                path:'video-conference',
+                element:<VideoChat/>
             },
         ]
     },
